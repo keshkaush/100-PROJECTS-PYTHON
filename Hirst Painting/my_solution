@@ -1,0 +1,24 @@
+import turtle as t
+import random
+
+t.colormode(255)
+tim = t.Turtle()
+colors_list = [(56, 92, 135), (198, 162, 101), (149, 74, 53), (224, 201, 118), (134, 68, 85), (194, 185, 23), (139, 165, 190), (210, 92, 70), (64, 40, 52), (180, 19, 12), (123, 200, 160), (205, 154, 180), (30, 116, 75), (19, 171, 150), (202, 77, 81), (24, 26, 32), (68, 56, 90), (133, 28, 37), (47, 90, 42), (61, 82, 37), (221, 167, 194), (160, 210, 189), (224, 177, 169), (120, 114, 151), (31, 38, 33), (186, 188, 204)]
+
+
+def row():
+    for _ in range(10):
+        tim.dot(20, random.choice(colors_list))
+        tim.penup()
+        tim.forward(50)
+        tim.pendown()
+
+
+for p in range(1, 11):
+    row()
+    tim.penup()
+    tim.goto(0, 50 * p)
+    tim.pendown()
+
+screen = t.Screen()
+screen.exitonclick()

@@ -1,0 +1,13 @@
+import colorgram    #import colorsgram for pip because its not an family library.
+
+rgb_list = []
+colors = colorgram.extract('wp7394638.jpg', 30)   #change the name with the image you have.
+
+for color in colors:
+    r = color.rgb.r
+    g = color.rgb.g
+    b = color.rgb.b
+    new_tuple = (r, g, b)
+    rgb_list.append(new_tuple)
+
+print(rgb_list)

@@ -10,8 +10,6 @@ screen.bgcolor("black")
 screen.title("The Snake Game")
 screen.tracer(0)
 
-score = 0
-
 snake = Snake()
 food = Food()
 scoreboard = Scoreboard()
@@ -27,7 +25,6 @@ is_game_onn = True
 while is_game_onn:
     screen.update()
     time.sleep(0.1)
-
     snake.move()
     # collision with food
     if snake.head.distance(food) < 15:
@@ -36,13 +33,16 @@ while is_game_onn:
         scoreboard.update()
     # collision with wall
     if snake.head.xcor() > 280 or snake.head.xcor() < -290 or snake.head.ycor() < -290 or snake.head.ycor() > 280:
-        is_game_onn = False
-        scoreboard.game_over()
+        scoreboard.reset()
+        snake.reset()
+
     # collision with the tail i.e: with any of its segments, trigger the is_game_onn to false
-    for segment in snake.segments[1:]:
-        if snake.head.distance(segment) < 10:
-            is_game_onn = False
-            scoreboard.game_over()
+    for segment in snake.segments:
+        if segment == snake.head:
+            pass
+        elif snake.head.distance(segment) < 10:
+            scoreboard.reset()
+            snake.reset()
 
 screen.exitonclick()
 

@@ -1,3 +1,6 @@
 new_lst = ['caroline', 'keshav', 'elenaor']
-lst = [name.upper() for name in new_lst if len(name) < 8 ]
-print(lst)
+import random
+student_score = {student: random.randint(1, 100) for student in new_lst}
+print(student_score)
+passed_student = {key: value for(key, value) in student_score.items() if value > 60}
+print(passed_student)

@@ -26,7 +26,6 @@ student_data_dict = {code.letter: code.code for(letter, code) in student_data_fr
 print(student_data_dict)
 
 #TODO 2. Create a list of the phonetic code words from a word that the user inputs.
-user_input = input("what's the word ? ")
-alpha = [alphabet.upper() for alphabet in user_input]
-result = [student_data_dict[x] for x in alpha if x in student_data_dict.keys()]
+user_input = input("what's the word ? ").upper()
+result = [student_data_dict[alphabet] for alphabet in user_input]
 print(result)

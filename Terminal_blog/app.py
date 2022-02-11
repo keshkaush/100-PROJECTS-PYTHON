@@ -1,7 +1,7 @@
 from database import Database
 from menu import Menu
 
-__author__ = 'jslvtr'
+__author__ = 'keshkaush'
 
 Database.initialize()
 
